@@ -23,7 +23,7 @@ Clarifications:
 import simpy 
 import numpy as np 
 
-Distributions = ["exponential", "normal", "lognormal", "uniform"]
+DISTRIBUTIONS = ["exponential", "normal", "lognormal", "uniform"]
 
 def _sample_service(rng, dist: str, mu: float, cv: float = 1.0) -> float:
     """Draws one service time sample"""
