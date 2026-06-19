@@ -110,14 +110,14 @@ def run(lam: float, mu: float, dist: str = "exponential", cv: float = 1.0, sim_t
     env.run(until=sim_time)
 
     n_served = len(wait_times)
-    rho_obs  = busy_time / sim_time if sim_time > 0 else 0
+    rho_obs = busy_time / sim_time if sim_time > 0 else 0
 
     return {
-        "rho":         rho_obs,
-        "mean_wait":   float(np.mean(wait_times))   if wait_times else 0.0,
+        "rho": rho_obs,
+        "mean_wait": float(np.mean(wait_times))   if wait_times else 0.0,
         "mean_system": float(np.mean(wait_times)) + (1.0 / mu) if wait_times else 0.0,
-        "wait_times":  wait_times,
-        "queue_log":   queue_log,
-        "n_served":    n_served,
+        "wait_times": wait_times,
+        "queue_log": queue_log,
+        "n_served": n_served,
     }
 
